@@ -27,9 +27,10 @@ public class MainActivity extends AppCompatActivity {
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (nameText.equals("sandesh") && passText.equals("pawar")){
-                    Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
-
+                if (nameText.equals("") && passText.equals("")){
+//                    Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                    Intent failedLogin = new Intent(MainActivity.this, LoginFailed.class);
+                    startActivity(failedLogin);
                 }
                 else {
 //                    Toast.makeText(this, "Login Failed", Toast.LENGTH_SHORT).show();
